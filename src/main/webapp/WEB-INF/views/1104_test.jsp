@@ -7,8 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>왜안되는데요 짱나게</h1>
-<h1>왜안되는데요 짱나게2</h1>
+<h1>마지막 테스트</h1>
 
 </body>
 </html>
