@@ -5,4 +5,22 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
+	<bean class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="dataSource">
+		<property name="username" value="pro"></property>
+		<property name="password" value="pro"></property>
+		<property name="url" value="jdbc:oracle:thin:211.238.142.228:1521:xe"></property>
+		<property name="driverClassName" value="JDBC 드라이버명"></property>
+	</bean>
+	
+	<!-- Connection 과 XML 파일 연결 클래스 -->
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="mapperLocations" value="mapper파일들의경로명"></property>
+	</bean>
+	
+	<!-- 결과 매핑  -->
+	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactoryBean"></constructor-arg>
+	</bean>
+	
 </beans>
